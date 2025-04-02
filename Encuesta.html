@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta - ACP</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="inicio.html" target="_self">Inicio</a></li>
+            <li><a href="Encuesta.html" target="_self">Descubre tu yo politico</a></li>
+            <li class="dropdown">
+                <a href="Noticias.html" class="dropbutton">Noticias</a>
+                <div class="dropdown-content">
+                    <a href="Noticias.html#noticias-politicas">Noticias Políticas</a>
+                    <a href="Noticias.html#noticias-economicas">Noticias Económicas</a>
+                    <a href="Noticias.html#noticias-civiles">Noticias Civiles</a>
+                </div>
+            </li>
+            <li><a href="Contactanos.html" target="_self">Contáctanos</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="Espectro politico">
+    <h2>¿Cómo</h2>
+    <form id="encuesta-form">
+        <label for="politica">Selecciona tu posición política:</label>
+        <select id="politica" name="politica">
+            <option value="izquierda">Izquierda</option>
+            <option value="derecha">Derecha</option>
+            <option value="centro">Centro</option>
+            <option value="neutro">Neutro</option>
+	    <option value="" disabled selected>Selecciona una opción</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="respuesta"></p>
+</section>
+<section id="encuesta">
+    <h2>Descubre tu yo político</h2>
+    <form id="encuesta-form">
+        <label for="politica">Selecciona tu posición política:</label>
+        <select id="politica" name="politica">
+            <option value="izquierda">Izquierda</option>
+            <option value="derecha">Derecha</option>
+            <option value="centro">Centro</option>
+            <option value="neutro">Neutro</option>
+	    <option value="" disabled selected>Selecciona una opción</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="respuesta"></p>
+</section>
+
+<footer>
+    <ul>
+	<li><a href="https://facebook.com/groups/3987034058179735" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com">Twitter</a></li>
+        <li><a href="https://instagram.com">Instagram</a></li>
+    </ul>
+</footer>
+
+<script>
+    document.getElementById('encuesta-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const politica = document.getElementById('politica').value;
+        const respuesta = document.getElementById('respuesta');
+        
+        switch(politica) {
+            case 'izquierda':
+                respuesta.textContent = "Te identificas con ideas progresistas, que buscan la igualdad social.";
+                break;
+            case 'derecha':
+                respuesta.textContent = "Tu postura está orientada a la defensa del mercado libre y el orden tradicional.";
+                break;
+            case 'centro':
+                respuesta.textContent = "Te encuentras en una posición intermedia, buscando el equilibrio entre ambas posturas.";
+                break;
+            case 'neutro':
+                respuesta.textContent = "No tienes una preferencia definida, lo que te permite una visión más flexible y objetiva.";
+                break;
+        }
+    });
+</script>
+
+</body>
+</html>
